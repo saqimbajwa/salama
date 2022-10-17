@@ -1,0 +1,49 @@
+﻿--CREATE TABLE [SetUpTbl](
+--    [Id] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
+--    [Name] [varchar](50),
+--    [IsActive] [bit]
+--  ) 
+ 
+
+
+--CREATE TABLE [SetUpDetailTbl] (
+--    ID INT PRIMARY KEY IDENTITY (1, 1),
+--    SetupId int,
+--    [Name] VARCHAR (50),
+--    IsActive [bit],
+--    FOREIGN KEY (SetupId) REFERENCES SetUpTbl(Id)
+--);
+
+
+
+
+
+--Insert into setuptbl([Name],IsActive)values('Car Make',1)
+--Insert into setuptbl([Name],IsActive)values('Car Model',1)
+--Insert into setuptbl([Name],IsActive)values('Car Body Type',1)
+--Insert into setuptbl([Name],IsActive)values('Trim',1)
+
+
+--Insert into SetUpDetailTbl([Name],SetupId,IsActive)values('Suzuki',1,1)
+--Insert into SetUpDetailTbl([Name],SetupId,IsActive)values('Honda',1,1)
+--Insert into SetUpDetailTbl([Name],SetupId,IsActive)values('Toyota',1,1)
+
+
+
+--Insert into SetUpDetailTbl([Name],SetupId,IsActive)values('2020',2,1)
+--Insert into SetUpDetailTbl([Name],SetupId,IsActive)values('2021',2,1)
+--Insert into SetUpDetailTbl([Name],SetupId,IsActive)values('2022',2,1)
+
+
+--Insert into SetUpDetailTbl([Name],SetupId,IsActive)values('Hatchback',3,1)
+--Insert into SetUpDetailTbl([Name],SetupId,IsActive)values('Solo',3,1)
+--Insert into SetUpDetailTbl([Name],SetupId,IsActive)values('Jeep',3,1)
+
+
+--Insert into SetUpDetailTbl([Name],SetupId,IsActive)values('A',4,1)
+--Insert into SetUpDetailTbl([Name],SetupId,IsActive)values('B',4,1)
+--Insert into SetUpDetailTbl([Name],SetupId,IsActive)values('C',4,1)
+
+
+select * from  SetUpTbl
+select * from  SetUpDetailTbl

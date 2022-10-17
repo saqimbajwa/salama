@@ -1,0 +1,60 @@
+body{font-family: 'Poppins', sans-serif;}
+li::marker{display: none;    font-size: 0;}
+.header{background-color: #fbfbfb;padding: 10px 0;}
+.top-num h4{font-size: 14px;margin: 0;}
+.top-num a{color: #000;font-size: 14px;text-decoration: none;}
+p{margin: 0;}
+.top-num p i{margin: 0 0 0 12px;}
+.form{padding: 50px 0 ;}
+.thumbnail { padding: 0px 0px; margin-bottom: 20px; line-height: 1; background-color: #fbdc21; border-radius: 24px; transition: border .2s ease-in-out; overflow: hidden;    width: 89%; }
+.nav.nav-pills li a{background: #266a75; padding: 16px 36px; text-align: center;display: block;text-decoration: none;}
+.nav.nav-pills li a h4{font-size: 15px; color: #fad000;margin: 0;text-transform: uppercase; }
+.nav.nav-pills li.step2 a{background-color: #fbcc02;}
+.nav.nav-pills li.step3 a{background-color: #fbdc21;}
+.nav.nav-pills li.step2 a h4 {
+    color: #266a75;
+}
+.nav.nav-pills li.step3 a h4 {
+    color: #266a75;
+}
+.setup-content h1{color:#fbcc04 ;text-transform: uppercase;}
+.setup-content{padding: 40px 0 0;}
+.setup-content form{padding: 40px 0 0;}
+.setup-content form label{display: block;margin-bottom: 10px;}
+.setup-content form select{width: 100%;height: 40px; border-radius: 24px;  padding: 0 15px;border-color: #fbcc02;box-shadow: 0 2px 4px rgba(0, 0, 0,.5);}
+.setup-content form select:focus-visible{border-color: #fbcc02;box-shadow: none;}
+.setup-content .form-group {margin: 0 0 20px;width: 60%;}
+.vehicle-info{background: #fff; box-shadow: 0 2px 5px rgba(0, 0, 0, .5); width: 50%;overflow: hidden;    margin: 0 auto;}
+.vehicle-info ul{margin: 0;padding: 10px 15px 40px;}
+.vehicle-info li{display: flex; align-items: center;padding: 20px;border-bottom: 1px solid #ccc;}
+.vehicle-info li i{color:#fbcc02;margin-right: 8px;}
+.vehicle-info li p{font-size: 14px;text-transform: capitalize;font-weight: 600;}
+.table thead{background-color: #ffcc00; text-align: center;}
+.table thead th{color: #266a75;padding: 30px 20px;border-right: 2px solid #fff;}
+.table-striped>tbody>tr:nth-of-type(odd)>*{background-color: #fff7da;}
+.table tbody th{ font-size: 15px;font-weight: 500;border-right: 2px solid #fff;}
+.table tbody td{ border-right: 2px solid #fff;text-align: center;}
+.table tbody td i{ font-size: 20px;color: #2e6d72;}
+.table tbody td i.cancel{ background: #d92227; border-radius: 50%; font-size: 16px; color: #fff; width: 20px; height: 20px; line-height: 1.2;}
+.table tbody tr.heading{padding: 10px 10px; text-align: left; text-transform: uppercase;color:#2e6d72 ;font-weight: 600;}
+
+@media (max-width:1600px){
+    .nav.nav-pills li a{padding: 16px 25px;}
+}
+@media (max-width:1199px){
+    .thumbnail{width: 100%;}
+    .nav.nav-pills li a {
+        padding: 16px 20px;
+    }
+    .setup-content .form-group{width: 100%;}
+    .vehicle-info{width: 100%;}
+}
+@media (max-width: 768px){
+.thumbnail {
+    width: 100%;
+    display: block !important;
+}
+}
+@media (max-width:575px){
+    .top-num{display: none !important;}
+}

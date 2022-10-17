@@ -1,0 +1,164 @@
+﻿@model Salama.Models.Setup
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<section class="form">
+    <div class="container">
+        <div class="form-sec">
+            <div class="row form-group">
+                <div class="col-lg-6">
+                    <ul class="nav nav-pills nav-justified thumbnail setup-panel d-flex align-items-center">
+                        <li class="active">
+                            <a href="#">
+                                <h4 class="list-group-item-heading"><i class="fa fa-address-book" aria-hidden="true"></i> Your Detail</h4>
+                            </a>
+                        </li>
+                        <li class="step2">
+                            <a href="#">
+                                <h4 class="list-group-item-heading"><i class="fa fa-file-text-o" aria-hidden="true"></i> Your Qoute</h4>
+
+                            </a>
+                        </li>
+                        <li class="step3">
+                            <a href="#">
+                                <h4 class="list-group-item-heading"><i class="fa fa-file-text" aria-hidden="true"></i> Your Policy</h4>
+
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <div class="setup-content">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <h1>Car Details</h1>
+                            <form>
+                                <div class="form-group">
+                                    <label for="make">Car Make</label>
+                                    <select asp-for="CarModelId" id="CarMake" 
+                                        asp-items="@(new SelectList(Model.CarMakeList,"Id","Name"))">
+                                       
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="model">Car Model</label>
+                                    <select asp-for="CarModelId" id="CarModel"  
+                                            asp-items="@(new SelectList(Model.CarModelList,"Id","Name"))">
+                                       
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="type">Car Body Type</label>
+                                    <select asp-for="CarBodyTypeId" id="CarBodyList" 
+                                            asp-items="@(new SelectList(Model.CarBodyTypeList,"Id","Name"))">
+                                      
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="trim">Trim</label>
+                                    <select asp-for="TrimId" id="TrimList" 
+                                            asp-items="@(new SelectList(Model.TrimList,"Id","Name"))">
+                                       
+                                    </select>
+                                </div>
+
+                            </form>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="vehicle-info">
+                                <ul>
+                                    <li>
+
+                                        <i class="fa fa-car" aria-hidden="true"></i> <p>vehicle Information</p>
+
+
+                                    </li>
+                                    <li>
+                                        <div class="container" id="CarDetails">
+
+                                            <table>
+                                                <tr>
+                                                    <th scope="row">Car Make : </th>
+                                                    <td>Suzuki</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Car Model : </th>
+                                                    <td>2016</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Car Body Type : </th>
+                                                    <td>Solo</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Trim : </th>
+                                                    <td>A</td>
+                                                </tr>
+                                            </table>
+
+                                        </div>
+                                    </li>
+                                    <li><i class="fa fa-id-card-o" aria-hidden="true"></i><p>Driver Detail</p></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <div class="col-lg-6">
+                    <button type="button" class="btn btn-warning" id="SubmitBtn">Submit</button>
+                    <button type="button" class="btn btn-warning" id="BenefitBtn">Benefit Page</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $("#CarDetails").empty();
+            //$("#CarDetails").parents('.li').remove();
+        });
+
+        $("#BenefitBtn").click(function () {
+            window.location.href = '/Home/Benefits';
+            return false;
+        });
+
+        $("#SubmitBtn").click(function () {
+            //CarMake
+            var CarMake = $('#CarMake :selected').text();
+            var CarModel = $('#CarModel :selected').text();
+            var CarBodyList = $('#CarBodyList :selected').text();
+            var TrimList = $('#TrimList :selected').text();
+
+            $("#CarDetails").empty();
+
+            var html = '';
+            html += '';
+            html += '<table>';
+            html += '<tr>';
+            html += '<th scope="row">Make : </th>';
+            html += `<td>${CarMake}</td>`;
+            html += '</tr>';
+            html += '<tr>';
+            html += '<th scope="row">Model : </th>';
+            html += `<td>${CarModel}</td>`;
+            html += '</tr>';
+            html += '<tr>';
+            html += '<th scope = "row" >Body Type : </th>';
+            html += `<td>${CarBodyList}</td >`;
+            html += '</tr>';
+            html += '<tr>';
+            html += '<th scope="row">Trim : </th> ';
+            html += `<td>${TrimList}</td>`;
+            html += '</tr> ';
+            html += '</table>';
+            $("#CarDetails").append(html);
+        });
+    </script>
+}
